@@ -1,0 +1,56 @@
+#Cleaning Report 
+
+#Areas of Concern
+/*1) Change the name of the table to RichestAtheletes
+	2)Delete previousyearrank column
+	3)Guarantee consistency on the name entrys on sports*/  
+	
+---1) Change the name of the data set to RichestAthelets
+ALTER TABLE "RichestAthelete"
+RENAME TO "RichestAtheletes"
+
+---2)Delete previousyearrank column
+ALTER TABLE "RichestAtheletes"
+DROP COLUMN previousyearrank
+
+---3)Guarantee consistency on the name entrys on sports
+SELECT DISTINCT sport FROM "RichestAtheletes"
+
+UPDATE "RichestAtheletes"
+SET sport = LOWER(sport)
+
+UPDATE "RichestAtheletes"
+SET sport = 'basketball'
+WHERE sport = 'nba'
+
+UPDATE "RichestAtheletes"
+SET sport = 'car racing'
+WHERE 
+	sport = 'f1 racing' OR 
+	sport = 'auto racing (nascar)' OR
+	sport = 'nascar' OR
+	sport = 'auto racing'
+
+UPDATE "RichestAtheletes"
+SET sport = 'moto racing'
+WHERE 
+	sport = 'motorcycle gp' OR 
+	sport = 'f1 motorsports' 
+
+UPDATE "RichestAtheletes"
+SET sport = 'american football'
+WHERE sport = 'nfl'
+	
+/* One of the sport name is "american football/baseball", to decide
+what to do with this entry lets figure out who is this player and 
+search on google his name to see what sport he really did*/
+SELECT name
+FROM "RichestAtheletes"
+WHERE sport = 'american football / baseball'
+--- it looks like it is Deion Sanders and he was an american football player
+UPDATE "RichestAtheletes"
+SET sport = 'american football'
+WHERE sport = 'american football / baseball'
+
+SELECT * FROM "RichestAtheletes"
+ORDER BY index
