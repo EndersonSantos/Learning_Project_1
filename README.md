@@ -8,13 +8,13 @@ In this data set we have the top 10 most well paid athelestes throughout the yea
   We want to discovery some trend in the players yearnings and se if theres any correlation with sport, country, etc.
   + How the average salary has change over the years?
 	
-  + What Sport Shows up more often in the top 10
+  + What Sport Shows up more often in the top 10?
 	
-  + What player Show's up more often in the top 10
+  + What player Show's up more often in the top 10?
 	
-  - What country has the most top 1 players 
+  - What country has the most top 1 players? 
 	
-  - What country has the average better salary
+  - What country has the average better salary?
 
 ## Prepare 
 The data has been extracted from topendsports.com website. And, stored on kaggle's dataset that you can find [here](https://www.kaggle.com/parulpandey/forbes-highest-paid-athletes-19902019)
