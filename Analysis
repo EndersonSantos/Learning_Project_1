@@ -1,0 +1,141 @@
+Analysis Changelog
+
+/*1) How the average salary has change over the years 
+	2)What Sport Shows up more often in the top 10
+	3)What player Show's up more often in the top 10
+	4) What country has the most top 1 players 
+	5)What country has the average better salary*/
+
+---1) How the average salary has change over the years?
+SELECT 
+	year, 
+	AVG(earnings) AS average_earnings
+FROM "RichestAtheletes"
+GROUP BY year
+ORDER BY year
+
+"1990"	12.799999999999997
+"1991"	18.35
+"1992"	15.87
+"1993"	17.83
+"1994"	14.89
+"1995"	22.91
+"1996"	27.309999999999995
+"1997"	33.809999999999995
+"1998"	28.140000000000004
+"1999"	35.75
+"2000"	33.85
+"2002"	32.36363636363637
+"2003"	37.5
+"2004"	40.739999999999995
+"2005"	40.62
+"2006"	43.1
+"2007"	42.1
+"2008"	48.3
+"2009"	47.6
+"2010"	51.36999999999999
+"2011"	44.88
+"2012"	54.31
+"2013"	55.25
+"2014"	64.24
+"2015"	95.03
+"2016"	63.52
+"2017"	62.370000000000005
+"2018"	105.94000000000001
+"2019"	94.13999999999999
+"2020"	81.91999999999999
+
+
+
+---2)What Sport Shows up more often in the top 10
+SELECT
+	sport,
+	COUNT(sport) AS Frequency
+FROM "RichestAtheletes"
+GROUP BY sport
+ORDER BY COUNT(sport) DESC
+
+"basketball"	82
+"boxing"	46
+"golf"	44
+"soccer"	33
+"car racing"	31
+"tennis"	23
+"american football"	21
+"moto racing"	9
+"baseball"	6
+"ice hockey"	3
+"cycling"	1
+"hockey"	1
+"mma"	1
+  
+---3)What is the top 10 of players who show's up more often in the top 10
+SELECT
+	name,
+	COUNT(name) AS frequency
+FROM "RichestAtheletes"
+GROUP BY name
+ORDER BY COUNT(name) DESC
+LIMIT 10
+
+"Tiger Woods"	19
+"Michael Jordan"	19
+"Kobe Bryant"	14
+"Michael Schumacher"	13
+"LeBron James"	13
+"Roger Federer"	12
+"Phil Mickelson"	11
+"Cristiano Ronaldo"	10
+"Shaquille O'Neal"	9
+"Lionel Messi"	9
+
+---4) What countries has the most top 1 players
+SELECT nationality, COUNT(nationality)
+FROM "RichestAtheletes"
+WHERE currentrank = 1
+GROUP BY nationality
+ORDER BY COUNT(nationality) DESC
+
+"USA"	24
+"Germany"	2
+"Portugal"	2
+"Argentina"	1
+"Switzerland"	1
+
+
+---5)What country has the average better salary
+SELECT nationality, AVG(earnings)
+FROM "RichestAtheletes"
+GROUP BY nationality
+ORDER BY AVG(earnings) DESC
+
+"Ireland"	99
+"Mexico"	94
+"Philippines"	80.66666666666667
+"Argentina"	79.5
+"Portugal"	78.71000000000001
+"Switzerland"	65.09166666666665
+"Filipino"	62
+"Serbia"	55.8
+"Northern Ireland"	50
+"Germany"	49.15384615384615
+"Brazil"	46.888888888888886
+"Spain"	44.5
+"Finland"	43
+"USA"	42.65194174757281
+"Dominican"	35
+"UK"	34.09230769230769
+"Italy"	32
+"Russia"	29.8
+"Canada"	16.516666666666666
+"Austria"	13.5
+"France"	12
+"Australia"	8.5
+
+---This last analysis could be not so precise by the fact that we only have one player from Ireland but it help us to have an idea
+
+SELECT name 
+FROM "RichestAtheletes"
+WHERE nationality = 'Ireland'
+
+"Conor McGregor"
