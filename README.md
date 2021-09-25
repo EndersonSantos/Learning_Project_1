@@ -20,7 +20,7 @@ In this data set we have the top 10 most well paid atheletes throughout the year
 The data has been extracted from topendsports.com website. And, stored on kaggle's dataset that you can find [here](https://www.kaggle.com/parulpandey/forbes-highest-paid-athletes-19902019)
 
 ## Process 
-This is a small dataset so we can easily do the whole process using excel(clean, analyse, and visualize). But, for learning purpose we are going to use SQL(Postgree) to clean, and analyse and then tableau to create a dataviz. And, we are going to use Python and its principals lybrary to data manupulation and dataviz(Pandas, matplotlib, seaborn) to peform the same steps again using jupyter notebook.
+This is a small dataset so we can easily do the whole process using excel(clean, analyse, and visualize). But, for learning purpose we are going to use SQL(Postgree) to clean, and analyse and then tableau to create a dataviz. And, we are going to use Python and its principals lybraries to data manupulation and dataviz(Pandas, matplotlib, seaborn) to peform the same steps again using jupyter notebook.
 
 ## Analyse 
 + We see a trend on the earning throughout the year and we expect that the wages of the best playing keep growing throgh the following years.
