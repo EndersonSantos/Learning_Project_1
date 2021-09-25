@@ -2,7 +2,7 @@
 An analysis of the Richest Atheletes since 1990 
 
 ## Overview
-In this data set we have the top 10 most well paid atheletes throughout the year from different sports. We are going to use this data set to answer some interest question.
+In this data set we have the top 10 most well paid atheletes throughout the years from different sports. We are going to use this data set to answer some interest questions.
 
 ## Ask
   We want to discovery some trend in the players yearnings and se if theres any correlation with sport, country, etc.
